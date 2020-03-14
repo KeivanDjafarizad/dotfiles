@@ -1,3 +1,9 @@
+#          _           _       _    __ _ _           
+#  _______| |__     __| | ___ | |_ / _(_) | ___  ___ 
+# |_  / __| '_ \   / _` |/ _ \| __| |_| | |/ _ \/ __|
+#  / /\__ \ | | | | (_| | (_) | |_|  _| | |  __/\__ \
+# /___|___/_| |_|  \__,_|\___/ \__|_| |_|_|\___||___/
+#                                                  
 # Sourcing Antigen.zsh
 source ~/.zsh/antigen.zsh
 
@@ -5,20 +11,23 @@ source ~/.zsh/antigen.zsh
 antigen use oh-my-zsh
 
 # == Themes ==
-#antigen theme denysdovhan/spaceship-zsh-theme spaceship
-#antigen theme geometry-zsh/geometry
-#antigen theme skylerlee/zeta-zsh-theme
-#antigen theme caiogondim/bullet-train.zsh
-#antigen theme halfo/lambda-mod-zsh-theme
-antigen theme zthxxx/jovial
-#antigen theme saleh7/igeek-zsh-theme
-#antigen theme eendroroy/alien alien
-#antigen theme tobyjamesthomas/pi
+# Themes list:
+# denysdovhan/spaceship-zsh-theme spaceship
+# geometry-zsh/geometry
+# skylerlee/zeta-zsh-theme
+# caiogondim/bullet-train.zsh
+# halfo/lambda-mod-zsh-theme
+# zthxxx/jovial
+# saleh7/igeek-zsh-theme
+# eendroroy/alien alien
+# tobyjamesthomas/pi
+THEME=denysdovhan/spaceship-zsh-theme 
+antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 
 # == Plugins ==
 # OS
 antigen bundle ubuntu
-##antigen bundle archlinux
+#antigen bundle archlinux
 # Utilites
 antigen bundle command-not-found
 antigen bundle web-search
@@ -52,6 +61,7 @@ antigen bundle z
 antigen bundle systemd
 antigen bundle vscode
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 
 # == Antigen Apply ==
 antigen apply

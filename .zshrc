@@ -60,18 +60,18 @@ antigen apply
 
 # == Aliases ==
 # Config i3 Aliases
-alias vfi='vim $HOME/.config/i3/config'
-alias cfi='code $HOME/.config/i3/config'
+#alias vfi='vim $HOME/.config/i3/config'
+#alias cfi='code $HOME/.config/i3/config'
 
 # Config zsh aliases
-alias vzsh='vim $HOME/.zshrc'
-alias czsh='code $HOME/.zshrc'
-alias szsh='source $HOME/.zshrc'
+#alias vzsh='vim $HOME/.zshrc'
+#alias czsh='code $HOME/.zshrc'
+#alias szsh='source $HOME/.zshrc'
 
 # Config Polybar
-alias chpl='cd $HOME/.config/polybar/'
-alias vpl='vim $HOME/.config/polybar/config'
-alias plbr='$HOME/.config/polybar/launch.sh'
+#alias chpl='cd $HOME/.config/polybar/'
+#alias vpl='vim $HOME/.config/polybar/config'
+#alias plbr='$HOME/.config/polybar/launch.sh'
 
 # Dotfiles Managing
 alias dotfiles='/usr/bin/git --git-dir=/home/keivan/.dotfiles/ --work-tree=/home/keivan'

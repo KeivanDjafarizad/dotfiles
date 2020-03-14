@@ -21,7 +21,7 @@ antigen use oh-my-zsh
 # saleh7/igeek-zsh-theme
 # eendroroy/alien alien
 # tobyjamesthomas/pi
-THEME="denysdovhan/spaceship-zsh-theme spaceship"
+THEME="zthxxx/jovial"
 antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 
 # == Plugins ==

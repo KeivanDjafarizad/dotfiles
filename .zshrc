@@ -57,6 +57,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 # Env Variables
+source $HOME/.env
 
 # == Aliases ==
 # Config i3 Aliases

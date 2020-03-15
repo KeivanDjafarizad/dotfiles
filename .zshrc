@@ -3,7 +3,12 @@
 # |_  / __| '_ \   / _` |/ _ \| __| |_| | |/ _ \/ __|
 #  / /\__ \ | | | | (_| | (_) | |_|  _| | |  __/\__ \
 # /___|___/_| |_|  \__,_|\___/ \__|_| |_|_|\___||___/
-#                                                  
+#
+# Author: Keivan Djafarizad
+# Description: Zsh dotfiles powered by antigen and set up for a lot of plugins, 
+# mostly never properly used
+# URL: https://github.com/KeivanDjafarizad/dotfiles
+#
 # Sourcing Antigen.zsh
 source ~/.zsh/antigen.zsh
 

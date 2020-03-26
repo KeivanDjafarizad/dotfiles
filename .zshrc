@@ -30,43 +30,46 @@ THEME="zthxxx/jovial"
 antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 
 # == Plugins ==
-# OS
-antigen bundle ubuntu
-#antigen bundle archlinux
-# Utilites
-antigen bundle command-not-found
-antigen bundle web-search
-antigen bundle sudo 
-antigen bundle jsontools
-antigen bundle gpg-agent
-# Git
-antigen bundle git
-antigen bundle git-extras
-antigen bundle git-flow
-antigen bundle github
-antigen bundle git-remote-branch
-antigen bundle gitignore
-# Completion
-antigen bundle gem
-antigen bundle pip
-antigen bundle heroku
-# Aliases
-antigen bundle common-aliases
-antigen bundle compleat
-antigen bundle yarn
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle dotenv
-antigen bundle emoji
-antigen bundle gulp
-antigen bundle npm
-antigen bundle node
-antigen bundle nmap
-antigen bundle z
-antigen bundle systemd
-antigen bundle vscode
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
+antigen bundles <<EOBUNDLES
+    # OS
+    ubuntu
+    #archlinux
+    # Utilites
+    command-not-found
+    web-search
+    sudo 
+    jsontools
+    gpg-agent
+    alexandergood/oh-my-zsh plugins/nordvpn
+    # Git
+    git
+    git-extras
+    git-flow
+    github
+    git-remote-branch
+    gitignore
+    # Completion
+    gem
+    pip
+    heroku
+    # Aliases
+    common-aliases
+    compleat
+    yarn
+    docker
+    docker-compose
+    dotenv
+    emoji
+    gulp
+    npm
+    node
+    nmap
+    z
+    systemd
+    vscode
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-autosuggestions
+EOBUNDLES
 
 # == Antigen Apply ==
 antigen apply

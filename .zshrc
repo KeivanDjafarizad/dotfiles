@@ -75,7 +75,7 @@ EOBUNDLES
 antigen apply
 
 # Env Variables
-source $HOME/.env
+# Write them into .zshenv
 
 # == Aliases ==
 # Config i3 Aliases

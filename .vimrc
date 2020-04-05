@@ -25,7 +25,7 @@ set updatetime=300
 " == Usablitity Options == {{{
 set showmatch
 set background=dark
-set showmode
+set noshowmode
 set clipboard=unnamed           
 set ignorecase
 set smartcase
@@ -85,6 +85,7 @@ Plugin 'dense-analysis/ale'
 " Interesting Stuff
 Plugin 'vimwiki/vimwiki'
 " Colorschemes
+Plugin 'franbach/miramare'
 Plugin 'dracula/vim'
 
 call vundle#end()
@@ -121,9 +122,13 @@ inoremap <silent><expr> <Tab>
 " }}}
 
 " == Colorscheme == {{{
-colorscheme dracula
+set termguicolors
+colorscheme miramare
 " }}}
  
+" == Lightline Configuration == {{{
+let g:lightline = { 'colorscheme': 'wombat' }
+"}}}
 " == Vimwiki Settings == {{{
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]

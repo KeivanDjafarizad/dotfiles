@@ -16,7 +16,8 @@ font:
     bold:
         family: Inconsolata
         style: bold
-
+    size: 13.0
+    
 # Colors (Dracula)
 colors:
   # Default colors
@@ -78,4 +79,5 @@ colors:
 
 # Key Bindings
 key_bindings:
-  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: F11, action: ToggleFullscreen }

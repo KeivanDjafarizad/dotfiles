@@ -8,6 +8,7 @@
 " Description: A mostly copied vim dotfiles, needs to be properly commented, but still...
 " URL: https://github.com/KeivanDjafarizad/dotfiles
 "
+" == Basic Settings == {{{
 " == Features ==
 set nocompatible
 filetype indent plugin on
@@ -19,8 +20,9 @@ set wildmenu
 set showcmd
 set hlsearch " Highlight searches (use <C-L> to temporarily turn off highlighting; see the mapping of <C-L> below)
 set updatetime=300
+"}}}
 
-" == Usablitity Options ==
+" == Usablitity Options == {{{
 set showmatch
 set background=dark
 set showmode
@@ -49,13 +51,15 @@ set relativenumber
 set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
+
 " == Indentation Options ==
 set shiftwidth=4
 set softtabstop=4 softtabstop=4
 set expandtab
 set colorcolumn=80
+" }}}
 
-" == Mappings ==
+" == Custom Mappings == {{{
 let mapleader = " "
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy, which is the default
 map Y y$ 
@@ -68,10 +72,37 @@ nnoremap <leader>o :NERDTreeToggle<CR>
 nnoremap <leader>u :UndotreeToggle <bar> :UndotreeFocus<CR>
 nnoremap <leader>pv wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
-" Sourcing plugins through Vundle
-source ~/.vim/plugins.vim
+" }}}
 
-" Coc Settings
+" == Plugins through Vundle == {{{
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'dracula/vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'mbbill/undotree'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-surround'
+Plugin 'dense-analysis/ale'
+Plugin 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plugin 'frazrepo/vim-rainbow'
+Plugin 'tpope/vim-commentary'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'vimwiki/vimwiki'
+
+call vundle#end()
+
+filetype plugin indent on
+" }}}
+
+" == Coc Settings == {{{
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -91,12 +122,12 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
-if has('patch8.1.1068')
-  " Use `complete_info` if your (Neo)Vim version supports it.
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+" if has('patch8.1.1068')
+"   " Use `complete_info` if your (Neo)Vim version supports it.
+"   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" else
+"   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" endif
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -173,6 +204,15 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-" Colorscheme
+
+" }}}
+
+" == Colorscheme == {{{
 colorscheme dracula
-                                                       
+" }}}
+ 
+" == Vimwiki Settings == {{{
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+" }}}
+

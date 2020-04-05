@@ -95,6 +95,9 @@ antigen apply
 # Dotfiles Managing
 alias dotfiles='/usr/bin/git --git-dir=/home/keivan/.dotfiles/ --work-tree=/home/keivan'
 
+# Vimwiki aliases
+alias vimwiki='cd ~/vimwiki && nvim index.md'
+
 # nmcli Aliases
 #alias nmcli_list='nmcli device wifi list'
 #alias nmcli_rescan='nmcli device wifi rescan'

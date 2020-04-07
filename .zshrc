@@ -105,3 +105,6 @@ alias vimwiki='cd ~/vimwiki && nvim index.md'
 
 # Other Aliases
 #eval $(thefuck --alias)
+
+#FZF setup
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -82,11 +82,6 @@ antigen apply
 #alias vfi='vim $HOME/.config/i3/config'
 #alias cfi='code $HOME/.config/i3/config'
 
-# Config zsh aliases
-#alias vzsh='vim $HOME/.zshrc'
-#alias czsh='code $HOME/.zshrc'
-#alias szsh='source $HOME/.zshrc'
-
 # Config Polybar
 #alias chpl='cd $HOME/.config/polybar/'
 #alias vpl='vim $HOME/.config/polybar/config'
@@ -94,6 +89,7 @@ antigen apply
 
 # Dotfiles Managing
 alias dotfiles='/usr/bin/git --git-dir=/home/keivan/.dotfiles/ --work-tree=/home/keivan'
+alias ds='/usr/bin/git --git-dir=/home/keivan/.dotfiles/ --work-tree=/home/keivan status'
 
 # Vimwiki aliases
 alias vimwiki='cd ~/vimwiki && nvim index.md'
@@ -105,6 +101,10 @@ alias vimwiki='cd ~/vimwiki && nvim index.md'
 
 # Other Aliases
 #eval $(thefuck --alias)
+alias vim="nvim" 
+alias g='git'
+alias gs='git status'
+alias gd='git diff'
 
 #FZF setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

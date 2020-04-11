@@ -10,7 +10,7 @@
 # URL: https://github.com/KeivanDjafarizad/dotfiles
 #
 # Sourcing Antigen.zsh
-source ~/.zsh/antigen.zsh
+source antigen.zsh
 
 # Initialize Oh-my-zsh
 antigen use oh-my-zsh

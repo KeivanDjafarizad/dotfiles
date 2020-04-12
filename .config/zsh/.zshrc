@@ -10,7 +10,7 @@
 # URL: https://github.com/KeivanDjafarizad/dotfiles
 #
 # Sourcing Antigen.zsh
-source antigen.zsh
+source $ZDOTDIR/antigen.zsh
 
 # Initialize Oh-my-zsh
 antigen use oh-my-zsh
@@ -95,12 +95,12 @@ alias ds='/usr/bin/git --git-dir=/home/keivan/.dotfiles/ --work-tree=/home/keiva
 alias vimwiki='cd ~/vimwiki && nvim index.md'
 
 # nmcli Aliases
-#alias nmcli_list='nmcli device wifi list'
-#alias nmcli_rescan='nmcli device wifi rescan'
-#alias nmcli_connect='echo "nmcli device wifi connect SSID password PASSWORD"'
+alias nmcli_list='nmcli device wifi list'
+alias nmcli_rescan='nmcli device wifi rescan'
+alias nmcli_connect='echo "nmcli device wifi connect SSID password PASSWORD"'
 
 # Other Aliases
-#eval $(thefuck --alias)
+eval $(thefuck --alias)
 alias vim="nvim" 
 alias g='git'
 alias gs='git status'

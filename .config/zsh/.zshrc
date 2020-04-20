@@ -109,3 +109,8 @@ alias -g F='| fzf'
 
 #FZF setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Zsh Bindings and stuff
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line

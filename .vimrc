@@ -74,12 +74,14 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-surround'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'lilydjwg/colorizer'
 " Code enhancements
 Plugin 'mattn/emmet-vim'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
@@ -131,6 +133,7 @@ colorscheme miramare
 " == Lightline Configuration == {{{
 let g:lightline = { 'colorscheme': 'wombat' }
 "}}}
+"
 " == Vimwiki Settings == {{{
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]

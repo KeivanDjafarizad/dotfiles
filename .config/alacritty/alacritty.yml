@@ -11,10 +11,10 @@
 # Fonts
 font:
     normal:
-        family: Inconsolata
+        family: Hack Nerd Font Mono 
         style: regular
     bold:
-        family: Inconsolata
+        family: Hack Nerd Font Mono 
         style: bold
     size: 13.0
     

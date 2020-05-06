@@ -50,7 +50,8 @@ set cmdheight=2
 set relativenumber
 set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
-
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
 
 " == Indentation Options ==
 set shiftwidth=4

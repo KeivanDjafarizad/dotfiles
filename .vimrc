@@ -90,7 +90,7 @@ Plugin 'dense-analysis/ale'
 " Interesting Stuff
 Plugin 'vimwiki/vimwiki'
 " Colorschemes
-Plugin 'franbach/miramare'
+Plugin 'morhetz/gruvbox'
 Plugin 'dracula/vim'
 
 call vundle#end()
@@ -128,7 +128,7 @@ inoremap <silent><expr> <Tab>
 
 " == Colorscheme == {{{
 set termguicolors
-colorscheme miramare
+colorscheme dracula 
 " }}}
  
 " == Lightline Configuration == {{{

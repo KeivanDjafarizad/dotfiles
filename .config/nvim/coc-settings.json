@@ -1,0 +1,7 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": ["markdown", "javascript", "json"],
+    "snippets.ultisnips.directories":[
+        "UtilSnips",
+        "~/.config/nvim/untils/snips"
+    ]
+}

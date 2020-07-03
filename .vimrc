@@ -4,7 +4,7 @@
 "  \ V /| | | | | | | | (_| | (_) | |_|  _| | |  __/\__ \
 "   \_/ |_|_| |_| |_|  \__,_|\___/ \__|_| |_|_|\___||___/
 " 
-" Author: Keivan Djafarizad
+" Author: Keivan Djafari zad
 " Description: A mostly copied vim dotfiles, needs to be properly commented, but still...
 " URL: https://github.com/KeivanDjafarizad/dotfiles
 "
@@ -50,8 +50,8 @@ set cmdheight=2
 set relativenumber
 set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+"au BufWinLeave * mkview
+"au BufWinEnter * silent loadview
 
 " == Indentation Options ==
 set shiftwidth=4
@@ -104,13 +104,25 @@ let mapleader = " "
 map Y y$ 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the next search
 nnoremap <C-L> :nohl<CR><C-L> nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>o :NERDTreeToggle<CR>
-nnoremap <leader>u :UndotreeToggle <bar> :UndotreeFocus<CR>
-nnoremap <leader>pv wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+" Windows Remapping based on C-w(indows) 
+nnoremap <C-w>j :wincmd j<CR>
+nnoremap <C-w>k :wincmd k<CR>
+nnoremap <C-w>l :wincmd l<CR>
+nnoremap <C-w>i :NERDTreeToggle<CR>
+nnoremap <C-w>u :UndotreeToggle <bar> :UndotreeFocus<CR>
+nnoremap <C-w>pv wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <C-w>t :tabnext<CR> 
+nnoremap <C-w>T :tabprevious<CR>
+" Fzf
+nnoremap <C-p> :Files .<CR>
+nnoremap <C-w>p :Buffers <CR>
+" Folds combo for easier use
+nnoremap <C-f> :set foldmethod=marker<CR>
 
+" }}}
+
+" == Fzf Settings == {{{
+let g:fzf_preview_window = 'right:60%'
 " }}}
 
 " == Coc Settings == {{{
@@ -134,7 +146,7 @@ colorscheme dracula
 " == Lightline Configuration == {{{
 let g:lightline = { 'colorscheme': 'wombat' }
 "}}}
-"
+
 " == Vimwiki Settings == {{{
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]

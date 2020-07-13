@@ -12,8 +12,8 @@
         * Vundle
     * Fonts
         * Inconsolata
-        * Victor Mono
-        * Fira Code
+        - Victor Mono
+        - Fira Code
     * Shell
         * Zsh
         * Zsh Files setup (.zprofile, .zshenv)
@@ -27,7 +27,13 @@
     * Development
         * Node
         * Npm
-        * Php
+        - Php
         * Python
     * Dotfiles Management
 
+    - Nitrogen
+    - Picom
+    - Rofi
+    - Ranger
+    - Rclone
+    - Rsync

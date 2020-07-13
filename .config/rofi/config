@@ -1,5 +1,0 @@
-rofi.combi-modi:	window,drun,ssh
-rofi.font:		Inconsolata\ Nerd\ Fonts 13
-rofi.modi:		combi
-rofi.terminal:		termite		
-rofi.theme: 		~/.config/rofi/android_notification.rasi	

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+selection=$(
+cat /home/keivan/Scripts/rofi-powermenu/selections | rofi -dmenu -p "Action: "
+)
+
+case $(echo $selection | awk '{print $1}') in
+    Shutdown)
+        sudo -A shutdown now
+        ;;
+    Reboot)
+        sudo -A reboot now
+        ;;
+    Logout)
+        bspc quit
+        ;;
+esac
+

@@ -26,7 +26,7 @@ antigen use oh-my-zsh
 # saleh7/igeek-zsh-theme
 # eendroroy/alien alien
 # tobyjamesthomas/pi
-THEME="zthxxx/jovial"
+THEME="halfo/lambda-mod-zsh-theme"
 antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 
 # == Plugins ==
@@ -100,7 +100,7 @@ alias nmcli_rescan='nmcli device wifi rescan'
 alias nmcli_connect='echo "nmcli device wifi connect SSID password PASSWORD"'
 
 # Other Aliases
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 alias vim="nvim" 
 alias g='git'
 alias gs='git status'

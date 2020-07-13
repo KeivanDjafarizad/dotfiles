@@ -112,8 +112,6 @@ nnoremap <C-L> :nohl<CR><C-L> nnoremap <leader>h :wincmd h<CR>
 nnoremap <C-w>j :wincmd j<CR>
 nnoremap <C-w>k :wincmd k<CR>
 nnoremap <C-w>l :wincmd l<CR>
-nnoremap <C-w>i :NERDTreeToggle<CR>
-nnoremap <C-w>u :UndotreeToggle <bar> :UndotreeFocus<CR>
 nnoremap <C-w>pv wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <C-w>t :tabnext<CR> 
 nnoremap <C-w>T :tabprevious<CR>
@@ -123,12 +121,13 @@ nnoremap <C-w>p :Buffers <CR>
 " Folds combo for easier use
 nnoremap <C-f> :set foldmethod=marker<CR>
 
+nnoremap <leader>i :NERDTreeToggle<CR>
+nnoremap <leader>u :UndotreeToggle <bar> :UndotreeFocus<CR>
 " }}}
 
 " == Fzf Settings == {{{
 let g:fzf_preview_window = 'right:60%'
 " }}}
-
 
 " == Colorscheme == {{{
 set termguicolors

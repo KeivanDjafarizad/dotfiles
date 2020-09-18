@@ -16,7 +16,7 @@ font:
     bold:
         family: Hack Nerd Font Mono 
         style: bold
-    size: 7.0
+    size: 10.0
     
 # Colors (Dracula)
 colors:

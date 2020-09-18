@@ -1,0 +1,87 @@
+#!/bin/zsh
+
+# Intended usage:
+# createProject new-project -t node -g true 
+
+#Declare Project Folders and subfolders
+PROJECT_ROOT_FOLDER="$HOME/Projects/"
+declare -A PROJECT_TYPE_FOLDERS=( ["Node"]="Node/" ["Python"]="Python/" )
+
+# By Default all project initialize a git repository
+INITIALIZE_GIT_REPO=true
+
+# Get the project name and various flags
+POSITIONAL=()
+
+while [[ $# -gt 0 ]]
+do
+    key="$1"
+
+    case $key in
+        
+        -t|--type)
+            PROJECT_TYPE=$2
+            shift
+            shift
+            ;;
+        -g|--git)
+            INITIALIZE_GIT_REPO=$2
+            shift
+            shift
+            ;;
+        *)
+            POSITIONAL+=($1)
+            shift
+            ;;
+    esac
+done
+
+# TODO: Take as input only the first parameter
+# Save the project name input
+PROJECT_NAME=${POSITIONAL[1]}
+
+
+# Create project folder
+function createProjectFolder() {
+    mkdir -pv "$1"
+}
+
+# Creates the full project root
+function routeCreation() {
+    case $1 in
+        node)
+            echo $PROJECT_ROOT_FOLDER${PROJECT_TYPE_FOLDERS[Node]}$PROJECT_NAME
+            ;;
+        python)
+            echo $PROJECT_ROOT_FOLDER${PROJECT_TYPE_FOLDERS[Python]}$PROJECT_NAME
+            ;;
+        *)
+            echo $PROJECT_ROOT_FOLDER$PROJECT_NAME
+            ;;
+    esac
+}
+
+PROJECT_COMPLETE_FOLDER=$(routeCreation $PROJECT_TYPE)
+
+createProjectFolder $PROJECT_COMPLETE_FOLDER
+
+cd $PROJECT_COMPLETE_FOLDER
+
+echo "# $PROJECT_NAME" >> README.md
+
+git init .
+git add *
+git commit --all -m "Initial Commit"
+
+GITHUB_URL_ENDING=$(createRepo.py $PROJECT_NAME)
+GITHUB_SSH_URL="ssh://git@github.com/$GITHUB_URL_ENDING"
+GITHUB_URL="https://github.com/$GITHUB_URL_ENDING"
+
+echo $GITHUB_URL
+
+git remote add origin $GITHUB_SSH_URL.git
+git branch -M master
+git push -u origin master
+
+xdg-open $GITHUB_URL &
+code .

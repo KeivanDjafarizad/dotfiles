@@ -102,6 +102,8 @@ alias nmcli_connect='echo "nmcli device wifi connect SSID password PASSWORD"'
 # Other Aliases
 # eval $(thefuck --alias)
 alias vim="nvim" 
+alias pip="pip3"
+alias python="python3"
 alias g='git'
 alias gs='git status'
 alias gd='git diff'

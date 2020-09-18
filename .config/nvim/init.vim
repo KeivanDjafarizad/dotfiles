@@ -83,6 +83,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'lilydjwg/colorizer'
+Plugin 'liuchengxu/vim-which-key'
 " Code enhancements
 Plugin 'mattn/emmet-vim'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
@@ -98,9 +99,9 @@ call vundle#end()
 filetype plugin indent on
 " }}}
 
-" == Sourcing Files == {
+" == Sourcing Files == {{{
 source $HOME/.config/nvim/plug-config/coc.vim
-" }
+" }}}
 
 " == Custom Mappings == {{{
 let mapleader = " "

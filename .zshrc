@@ -20,9 +20,8 @@ source $ZSH/oh-my-zsh.sh
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Alias
-alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse --preview="bat --color=always --style=numbers --italic-text=always {}" | xargs nvim'
+alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse --preview="bat --color=always --style=numbers" | xargs nvim'
 alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vim="nvim"
 alias pip="pip3"
 alias pythom="python3"

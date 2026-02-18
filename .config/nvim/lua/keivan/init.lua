@@ -1,8 +1,8 @@
 require("keivan.remap")
-require("keivan.packer")
+require("keivan.lazy")
 require("catppuccin").setup({
 	telescope = {
 		enabled = true,
-		-- style = "nvchad"
+		style = "nvchad"
 	}
 })

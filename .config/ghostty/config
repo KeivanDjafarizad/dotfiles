@@ -1,0 +1,4 @@
+theme = Catppuccin mocha
+font-family = "MonaspiceAr Nerd Font Mono"
+font-style = bold
+font-feature = +liga

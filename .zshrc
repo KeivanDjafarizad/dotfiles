@@ -33,7 +33,7 @@ alias la="eza -lag"
 ## bat
 alias cat="bat"
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.composer/vendor/bin:$PATH"
 
 # NVM Import
 export NVM_DIR="/opt/homebrew/opt/nvm"

@@ -13,7 +13,7 @@ background, Telescope for fuzzy finding, and nvim-tree as the file explorer.
 │   └── keivan/                   # Personal module namespace
 │       ├── init.lua              # Loads remaps, lazy.nvim, and Catppuccin setup
 │       ├── lazy.lua              # lazy.nvim bootstrap + netrw disable + plugin specs
-│       ├── remap.lua             # Leader keymaps (file explorer etc.)
+│       ├── remap.lua             # Leader keymaps (file explorer, tabs)
 │       └── plugins/              # Plugin specs imported by lazy.nvim
 │           ├── telescope.lua
 │           ├── nvim-tree.lua     # File explorer plugin spec
@@ -30,10 +30,11 @@ background, Telescope for fuzzy finding, and nvim-tree as the file explorer.
 
 1. **`init.lua`** — requires the `keivan` module, calls `require("lualine").setup()`
    (statusline with defaults), and enables line numbers on the current window.
-2. **`lua/keivan/init.lua`** — requires, in order:
+2. **`lua/keivan/init.lua`** — first sets `mapleader` to `<Space>` and `maplocalleader` to `\`
+   (this must happen **before** `keivan.remap` — `<leader>` resolves at `vim.keymap.set()` time,
+   otherwise every mapping silently binds to the default `\` leader), then requires, in order:
    - `keivan.remap` (leader mappings),
-   - `keivan.lazy` (bootstraps lazy.nvim if missing, sets `<Space>` as `mapleader` and
-     `\` as `maplocalleader`, then runs `lazy.setup()`),
+   - `keivan.lazy` (bootstraps lazy.nvim if missing, disables netrw, then runs `lazy.setup()`),
    - `require("catppuccin").setup()` with Telescope integration enabled (`nvchad` style).
 3. **`after/plugin/*.lua`** — sourced automatically by Neovim after all plugins load:
    colorscheme is applied here (not in the spec), keymaps and per-plugin setup run.
@@ -61,8 +62,16 @@ Leader is **Space**; local leader is **\**.
 
 | Key | Action |
 |---|---|
-| `<leader>pv` | `:Neotree reveal` — open tree and reveal current file (replaces the old `:Ex`, which is unavailable because netrw is disabled) |
 | `<leader>e` | Toggle neo-tree (`:Neotree toggle`) |
+| `<leader>ev` | `:Neotree reveal` — open tree and reveal current file (replaces the old `:Ex`, which is unavailable because netrw is disabled) |
+
+### Tabs (`lua/keivan/remap.lua`)
+
+| Key | Action |
+|---|---|
+| `<leader>ct` | Create new tab (`:tabnew`) |
+| `<leader>nt` | Next tab (`:tabnext`) |
+| `<leader>pt` | Previous tab (`:tabprevious`) |
 
 ### Telescope (`after/plugin/telescope.lua`)
 
@@ -188,6 +197,10 @@ brew formula is only the library, **not** the CLI). Without it you get
 
 | Key / command | Action |
 |---|---|
+| `<cr>` / `o` | Open file |
+| `s` | Open file in vertical split |
+| `S` | Open file in horizontal split |
+| `t` | Open file in new tab |
 | `\` (your `maplocalleader`) | Toggle neo-tree focus/open |
 | `H` | Toggle hidden files |
 | `<space>` | Show available commands (command palette) |

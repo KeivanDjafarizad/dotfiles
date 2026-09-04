@@ -16,6 +16,7 @@ background, Telescope for fuzzy finding, and nvim-tree as the file explorer.
 │       ├── remap.lua             # Leader keymaps (file explorer, tabs)
 │       └── plugins/              # Plugin specs imported by lazy.nvim
 │           ├── telescope.lua
+│           ├── which-key.lua   # Keybinding discovery (popup + searchable views)
 │           ├── nvim-tree.lua     # File explorer plugin spec
 │           ├── lualine.lua       # Statusline plugin spec
 │           └── treesitter.lua
@@ -46,6 +47,7 @@ background, Telescope for fuzzy finding, and nvim-tree as the file explorer.
 | `catppuccin/nvim` | `lua/keivan/lazy.lua` | Colorscheme | `priority = 1000`, Telescope integration via `keivan/init.lua` |
 | `nvim-telescope/telescope.nvim` | `plugins/telescope.lua` | Fuzzy finder | Pinned to `version = "*"`, uses `telescope-fzf-native.nvim` (built with `make`) + `plenary.nvim` |
 | `nvim-neo-tree/neo-tree.nvim` | `plugins/nvim-tree.lua` | File explorer | `lazy = false`, `branch = "v3.x"`; depends on plenary, nui.nvim, nvim-web-devicons |
+| `folke/which-key.nvim` | `plugins/which-key.lua` | Keybinding discovery | Popup after pressing a prefix like `<Space>`; `<leader>?` / `:WhichKey` views with `/` fuzzy filter; reads `desc` fields from keymaps |
 | `nvim-lualine/lualine.nvim` | `plugins/lualine.lua` | Statusline | Setup with defaults in root `init.lua` |
 | `nvim-treesitter/nvim-treesitter` | `plugins/treesitter.lua` | Better syntax/highlighting | `build = ":TSUpdate"`; parsers installed in `after/plugin/treesitter.lua` |
 | `tpope/vim-commentary` | `lua/keivan/lazy.lua` | Comment toggling (`gcc`) | |
@@ -82,7 +84,17 @@ Leader is **Space**; local leader is **\**.
 | `<leader>fb` | Open buffers |
 | `<leader>fh` | Help tags |
 | `<leader>fg` | Git files |
+| `<leader>fk` | Fuzzy-search all keymaps (the "lazygit `?`" search — see also which-key below) |
 | `<leader>ps` | Grep for input string (`grep_string` with prompt) |
+
+### Which-Key (`lua/keivan/plugins/which-key.lua`)
+
+| Key / command | Action |
+|---|---|
+| pause after a prefix (e.g. `<Space>`) | Popup listing every key reachable from that prefix, with descriptions |
+| `<leader>?` | Browse keymaps for the current buffer |
+| `:WhichKey` | Browse **all** keymaps |
+| `/` (inside a which-key view) | Fuzzy-filter the listed bindings |
 
 ## Theme & UI
 

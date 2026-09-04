@@ -21,6 +21,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Disable netrw BEFORE loading plugins (lazy.nvim sources runtime plugins,
+-- including netrwPlugin.vim, during setup() -- setting these flags later in
+-- after/plugin is too late and causes E117: netrw#LocalBrowseCheck)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {

@@ -1,4 +1,4 @@
 require("keivan")
 require("lualine").setup()
 
-vim.wo.number = true
+vim.opt.number = true
